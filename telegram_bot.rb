@@ -1,7 +1,7 @@
 require 'telegram/bot'
 require_relative 'main'
 
-$token = '5727404394:AAFZbeQKUrj6XmcWKW5au0sq4UamD9sRRDQ'
+$token = 'YOUR_TOKEN'
 
 class TelegramBot < Recipes
   def initialize
