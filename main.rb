@@ -8,11 +8,12 @@ class Recipes
     $recipes2 = {}
   end
 
-  def find_recipe
+  def find_recipe(user_input)
+    @ingreds << user_input                                #WITHOUT COMMA
     @ingreds.map do |input_ingreds|
       unless input_ingreds.nil? or input_ingreds.empty?
         @tags_and_recipes.map do |tags_recipes|
-          if tags_recipes[0].include?(input_ingreds[0][0])
+          if tags_recipes[0].scan(input_ingreds[0][0])
             @recipes.push(tags_recipes[1])
           end
         end

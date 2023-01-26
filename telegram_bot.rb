@@ -1,7 +1,7 @@
 require 'telegram/bot'
 require_relative 'main'
 
-$token = ''
+$token = "5727404394:AAFZbeQKUrj6XmcWKW5au0sq4UamD9sRRDQ"
 
 class TelegramBot < Recipes
   def initialize
@@ -59,10 +59,6 @@ class TelegramBot < Recipes
           bot_stop(bot, message)
         when '/help'
           bot_help(bot, message)
-        # when '/find_recipe'
-        #   bot_find_recipe(bot, message)
-        # else
-        #    bot_doesnt(bot, message)
         end
         bot_find_recipe(bot, message)
       end
