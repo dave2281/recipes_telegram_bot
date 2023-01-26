@@ -8,25 +8,19 @@ class Recipes
     $recipes2 = {}
   end
 
-  def find_recipe(user_input)
-    @arr << user_input
-    @arr.map do |input|
-      @ingreds << input
-    end
-    @recipes.map do |recipes_and_keys|
-      @ingreds.map do |ingred|
-        if recipes_and_keys[0].include?(ingred)
-          unless user_input.nil? || user_input.empty?
-            @arr2 << recipes_and_keys[1]
-            $recipes2[user_input] = @arr2
-          else
-            break
+  def find_recipe
+    @ingreds.map do |input_ingreds|
+      unless input_ingreds.nil? or input_ingreds.empty?
+        @tags_and_recipes.map do |tags_recipes|
+          if tags_recipes[0].include?(input_ingreds[0][0])
+            @recipes.push(tags_recipes[1])
           end
         end
+        return @recipes
+      else
+        break
       end
     end
-    return ($recipes2[user_input]).join('
-')
   end
 
   def add_recipe(recipe, tags, name)
