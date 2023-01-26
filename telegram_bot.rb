@@ -1,7 +1,7 @@
 require 'telegram/bot'
 require_relative 'main'
 
-$token = 'YOUR_TOKEN'
+$token = '5727404394:AAFZbeQKUrj6XmcWKW5au0sq4UamD9sRRDQ'
 
 class TelegramBot < Recipes
   def initialize
@@ -9,8 +9,7 @@ class TelegramBot < Recipes
   end
 
   def bot_start(bot, message)
-    bot.api.send_message(chat_id: message.chat.id, text: "Привет, этот бот придуман гением Ruby community! Нужен для поиска и добавления рецептов.
-      Человек который решил воспользоваться ботом -> #{message.from.first_name}")
+    bot.api.send_message(chat_id: message.chat.id, text: "Привет, этот бот придуман гением Ruby community!\nНужен для поиска и добавления рецептов.\nЧеловек который решил воспользоваться ботом -> #{message.from.first_name}")
   end
 
   def bot_stop
@@ -42,7 +41,7 @@ class TelegramBot < Recipes
   end
 
   def bot_add_recipe(message)
-
+    #ADD RECIPES TO HASH
   end
 
   def bot_doesnt(bot, message)

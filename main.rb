@@ -26,16 +26,11 @@ class Recipes
       end
     end
     return ($recipes2[user_input]).join('
-      ')
+')
   end
 
   def add_recipe(recipe, tags, name)
     @recipes[tags] = "#{name} " + " #{recipe}"
   end
 end
-
-class_recipes = Recipes.new
-input = gets.chomp.to_s
-b = class_recipes.find_recipe(input)
-p b
 
