@@ -1,7 +1,7 @@
 class Recipes
   def initialize
     @recipes = {"яйцо, хлеб, молоко, фарш" => "Котлета, пожарить, съесть.",
-      "картошка, яйцо, олия" => "Драник, пожарить, съесть." }
+      "яйцо, картошка, олия" => "Драник, пожарить, съесть." }
     @ingreds = []
     @arr = []
     @arr2 = []
@@ -9,9 +9,12 @@ class Recipes
   end
 
   def find_recipe(user_input)
+    @ingreds << user_input
     @recipes.each do |each_hash|
-      if each_hash[0].include?(user_input)
-        return each_hash[1]
+      @ingreds.each do |each_ingreds|
+        if each_hash[0].include?(each_ingreds)
+          each_hash[1]
+        end
       end
     end
   end
