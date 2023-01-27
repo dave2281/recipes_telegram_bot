@@ -9,16 +9,9 @@ class Recipes
   end
 
   def find_recipe(user_input)
-    if user_input.nil? or user_input.empty?
-      @ingreds << user_input.split
-      @ingreds.map! do |input_ingreds|
-        @tags_and_recipes.map! do |tags_recipes|
-          tags_recipes.reject! { |x| x.nil? }
-          if tags_recipes[0].include?(input_ingreds[0][0])
-            @recipes.push(tags_recipes[1])
-          end
-        end
-        return @recipes
+    @recipes.each do |each_hash|
+      if each_hash[0].include?(user_input)
+        return each_hash[1]
       end
     end
   end
