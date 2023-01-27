@@ -20,6 +20,3 @@ class Recipes
     @recipes[tags] = "#{name} " + " #{recipe}"
   end
 end
-
-# :)
-
