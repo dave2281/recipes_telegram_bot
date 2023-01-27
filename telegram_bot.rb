@@ -33,7 +33,7 @@ class TelegramBot < Recipes
   end
 
   def bot_find_recipe(bot, message)
-    return unless message.text.include? '/find_recipe'
+    return unless message.to_s.include? '/find_recipe'
     class_recipes = Recipes.new
     puts ingreds_name(message)
     bot.api.send_message(chat_id: message.chat.id, text: class_recipes.find_recipe(ingreds_name(message)))
@@ -52,7 +52,7 @@ class TelegramBot < Recipes
     Telegram::Bot::Client.run($token) do |bot|
       bot.listen do |message|
         puts message
-        case message.text
+        case message.to_s
         when '/start'
           bot_start(bot, message)
         when '/stop'
