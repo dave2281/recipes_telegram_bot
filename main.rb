@@ -21,3 +21,5 @@ class Recipes
   end
 end
 
+# :)
+
