@@ -10,8 +10,8 @@ class Recipes
 
   def find_recipe(user_input)
     @ingreds << user_input
-    @recipes.each do |each_hash|
-      @ingreds.each do |each_ingreds|
+    @recipes.map do |each_hash|
+      @ingreds.map do |each_ingreds|
         if each_hash[0].include?(each_ingreds)
           each_hash[1]
         end
