@@ -13,10 +13,11 @@ class Recipes
     @recipes.map do |each_hash|
       @ingreds.map do |each_ingreds|
         if each_hash[0].include?(each_ingreds)
-          each_hash[1]
+          @arr << each_hash[1]
         end
       end
     end
+    return @arr.join("\n")
   end
 
   def add_recipe(recipe, tags, name)
