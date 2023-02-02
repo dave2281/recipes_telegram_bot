@@ -4,8 +4,8 @@ class Recipes
       "яйцо, картошка, олия" => "Драник, пожарить, съесть." }
     @ingreds = []
     @arr = []
-    @arr2 = []
-    $recipes2 = {}
+    # @arr2 = []
+    # $recipes2 = {}
   end
 
   def find_recipe(user_input)
