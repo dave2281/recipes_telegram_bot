@@ -41,7 +41,7 @@ class TelegramBot < Recipes
   end
 
   def bot_add_recipe(message)
-    #ADD RECIPES TO HASH
+    return bot.api.send_message(chat_id: message.chat.id, text: "Успешно добавлено!")
   end
 
   def bot_doesnt(bot, message)
