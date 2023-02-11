@@ -28,7 +28,7 @@ class TelegramBot < Recipes
       ")
   end
 
-  def ingreds_name(message)
+  private def ingreds_name(message)
     message.to_s.gsub('/find_recipe', '').strip
   end
 
